@@ -2,7 +2,7 @@
 Requires=docker.service
 After=docker.service
 [Service]
-EnvironmentFile=-{{ systemd_environment_file }}
+EnvironmentFile=-{{ environment_file_path }}/{{ vm_role }}
 ExecStartPre=-/usr/bin/docker rm --force %N
 ExecStart=/usr/bin/docker run \
   --name=%N \
